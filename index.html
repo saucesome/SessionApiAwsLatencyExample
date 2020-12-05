@@ -1,0 +1,63 @@
+<html>
+  <head></head>
+  <style>
+    html,
+    body {
+      font-size: 12px;
+    }
+
+    #frame-container {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      font-size: 1.5rem;
+      width: 500px;
+      margin: 0 auto;
+    }
+
+    #start-button {
+      border: 1px #a6a6a6 solid;
+      border-radius: 3px;
+      padding: 1rem;
+      color: #fff;
+      background: #777;
+      font-size: 1.5rem;
+    }
+
+    #start-button:hover {
+      background: #999;
+    }
+
+    #latency-stats {
+      margin-top: 2rem;
+      text-align: right;
+      height: 120px;
+      border: 2px dashed #a6a6a6;
+      padding: 1rem;
+      font-size: 1.5rem;
+    }
+  </style>
+  <body>
+    <div id="frame-container">
+      <h3>Frame Session API & Latency example</h3>
+      <script src="./frame.js"></script>
+      <label>
+        Region Selector:
+        <select id="account-region" name="account-region">
+          <option value="" disabled selected>
+            Select the fastest location
+          </option>
+          <option id="VIRGINIA" value="us-east-1">North Virginia</option>
+          <option id="CALIFORNIA" value="us-west-1">California</option>
+          <option id="OHIO" value="us-east-2">Ohio</option>
+          <option id="MUMBAI" value="ap-south-1">Mumbai, India</option>
+        </select>
+      </label>
+      <br />
+      <button id="start-button" disabled>Loading...</button>
+      <div id="latency-stats"></div>
+      <br />
+      <span id="session-notification"></span>
+    </div>
+  </body>
+</html>
